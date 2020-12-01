@@ -117,7 +117,7 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_Calculator):
 			self.pushButton_divd.setChecked(False)
 			
 
-#		self.userIsTypingSecondNumber = False
+		self.userIsTypingSecondNumber = False
 
 	def clear_pressed(self):
 		self.pushButton_add.setChecked(False)
