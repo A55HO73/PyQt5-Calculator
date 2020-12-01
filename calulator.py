@@ -1,3 +1,64 @@
+'''
+
+import pyautogui as pg
+import csv
+import os
+from datetime import datetime as dt
+
+
+timex = str(dt.now()).split()[0]
+namex = pg.prompt("Enter Name :")
+addx = pg.prompt("Enter Address")
+gstx = pg.prompt("Enter GSTIN :")
+
+items = []
+total =0
+while True :
+    itemx = pg.prompt("Enter Items Name ")
+    sizx = pg.prompt("Enter " + itemx+" Size")
+    ratex = pg.prompt("Enter " + itemx+" Rate")
+    quantity = pg.prompt("Enter " + itemx+" Quantity")
+    
+
+
+print(timex)
+
+
+
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
+import sys
+
+app = QApplication(sys.argv)
+win = QMainWindow()
+win.setGeometry(200,200,1280,720)
+win.setWindowTitle("My Anime")
+
+
+
+label = QtWidgets.QLabel(win)
+label.setText("My Anime")
+label.move(400,400)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+win.show()
+
+sys.exit(app.exec_())
+'''
+
 
 from PyQt5 import QtWidgets
 from ui_calculator import Ui_Calculator 
@@ -35,6 +96,10 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_Calculator):
 
 
 		self.pushButton_equals.clicked.connect(self.equal_pressed)
+
+
+		self.pushButton_clear.clicked.connect(self.clear_pressed)
+
 		
 		self.pushButton_add.setCheckable(True)
 		self.pushButton_sub.setCheckable(True)
@@ -44,11 +109,14 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_Calculator):
 		button = self.sender()
 
 		if (self.pushButton_add.isChecked() or self.pushButton_sub.isChecked() or self.pushButton_mult.isChecked() or self.pushButton_divd.isChecked()   and not self.userIsTypingSecondNumber):
-			newLabel = format(button.text(),".15g")
+			newLabel = format(float(button.text()),".15g")
 			self.userIsTypingSecondNumber = True
 
 		else :
-			newLabel = format(float(self.label.text()+ button.text()),".15g")
+			if  "." in self.label.text() and button.text() == "0":
+				newLabel = format(self.label.text() + button.text(), "15")
+			else :
+				newLabel = format(float(self.label.text()+ button.text()),".15g")
 		self.label.setText(newLabel)
  
 	def decimal_pressed(self):
@@ -109,3 +177,16 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_Calculator):
 			self.label.setText(newLabel)
 			self.pushButton_divd.setChecked(False)
 			
+
+#		self.userIsTypingSecondNumber = False
+
+	def clear_pressed(self):
+		self.pushButton_add.setChecked(False)
+		self.pushButton_sub.setChecked(False)
+		self.pushButton_mult.setChecked(False)
+		self.pushButton_divd.setChecked(False)
+
+
+		self.userIsTypingSecondNumber = False
+
+		self.label.setText("0")
