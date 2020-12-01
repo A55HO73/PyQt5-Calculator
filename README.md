@@ -1,6 +1,7 @@
 # PyQt5-Calculator
 
-A Basic Calculator Using PyQt5 . To use it, clone all the files and run ```main.py``` (if **PyQt5** is already install in your system otherwise see [Installation])
+A Basic Calculator Using PyQt5 . To use it, clone all the files and run ```main.py``` (if **PyQt5** is already install in your system otherwise see Installation)
+
 
 ## **PyQt5**
 Qt is set of cross-platform C++ libraries that implement high-level APIs for accessing many aspects of modern desktop and mobile systems. These include location and positioning services,as well as traditional UI development and many other stuffs.
