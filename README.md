@@ -1,6 +1,6 @@
 # PyQt5-Calculator
 
-A Basic Calculator Using PyQt5 . To use it, clone all the files and run ```main.py``` (if **PyQt5** is already install in your system otherwise see Installation)
+A Basic Calculator Using PyQt5 . To use it, clone all the files and run ```main.py``` (if **PyQt5** is already installed on your system otherwise see **Installation**)
 
 
 ## **PyQt5**
@@ -11,7 +11,7 @@ PyQt5 is a comprehensive set of Python bindings for Qt v5. It is implemented as 
 
 ## Installation
 To run the code you need to install **PyQt5** 
-which can be done via 
+which can be done via entering the following command on your teminal or command prommpt
 > ```pip install PyQt5```
 
 ## Contribution
