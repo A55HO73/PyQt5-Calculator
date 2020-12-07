@@ -1,3 +1,5 @@
+#this is the backbone of the calculator
+
 from PyQt5 import QtWidgets
 from ui_calculator import Ui_Calculator 
 
