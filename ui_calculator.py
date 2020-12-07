@@ -1,4 +1,5 @@
 #this code is created with QtDesigner 
+#this file generates the UI for the calculator
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
