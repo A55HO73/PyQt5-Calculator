@@ -1,3 +1,6 @@
+#run this file to use the Calculator
+
+
 from PyQt5.QtWidgets import QApplication
 import sys
 from calulator import CalculatorWindow
